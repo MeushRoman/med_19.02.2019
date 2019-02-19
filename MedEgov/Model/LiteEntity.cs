@@ -30,17 +30,17 @@ namespace MedEgov.Model
             var request = db.GetCollection<Request>("request");
             return request.FindAll().Where(w=>w.id==id).ToList();
         }
-        public List<Request> getRequestByPatientId(int id)
+        public List<Request> getRequestByPatientId(int patientId)
         {
             var request = db.GetCollection<Request>("request");
-            return request.FindAll().Where(w => w.patientId == id).ToList();
+            return request.FindAll().Where(w => w.patientId == patientId).ToList();
         }
 
-        //public List<Request> getRequestByPatientId(int id)
-        //{
-        //    var request = db.GetCollection<Request>("request");
-        //    return request.FindAll().Where(w => w.patientId == id).ToList();
-        //}
+        public List<Request> getRequestByMedOrgId(int medOrgId)
+        {
+            var request = db.GetCollection<Request>("request");
+            return request.FindAll().Where(w => w.medOrgId == medOrgId).ToList();
+        }
 
         public void updateRequest(Request r)
         {
