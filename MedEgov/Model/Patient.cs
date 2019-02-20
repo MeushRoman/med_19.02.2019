@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace MedEgov.Model
 {
-    public class Patient
+    public class Patient : People
     {
-        public string name { get; set; }
-        public string surname { get; set; }
-        public string middleName { get; set; }
-
         public string IIN_;
 
         public string IIN
@@ -30,5 +26,15 @@ namespace MedEgov.Model
         }
         public MedOrg medOrg { get; set; } = null;
 
+        public override double GetDiscount()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void printInfo()
+        {
+            base.printInfo();
+            Console.WriteLine(medOrg);
+        }
     }
 }

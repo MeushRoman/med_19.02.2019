@@ -8,6 +8,7 @@ namespace MedEgov.Model
 {
     public class MedOrg
     {
+        public int id { get; set; }
         public string name { get; set; }
         public string address { get; set; }
 
@@ -22,5 +23,11 @@ namespace MedEgov.Model
             patients = new List<Patient>();
         }
 
+    }
+    public class PatientAddedMed
+    {
+        public int id { get; set; }
+        public int medOrgId { get; set; }
+        public int patientId { get; set; }
     }
 }
